@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Портфолио Александры Чикуровой — Designer / Digital Designer. Design × Code × Game." />
+  <title>Александра Чикурова — Designer / Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=Manrope:wght@400;500;600;700;800&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet" />  <style>
+    :root {
+      --cream: #F5F0E5;
+      --paper: #FFFDF7;
+      --beige: #E7DFD0;
+      --wine: #9E1738;
+      --deep-wine: #74132D;
+      --blue: #AFC1D2;
+      --graphite: #252525;
+      --line: rgba(37, 37, 37, .2);
+      --serif: "Bodoni Moda", Georgia, serif;
+      --sans: "Manrope", Arial, sans-serif;
+      --hand: "Caveat", cursive;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--graphite);
+      background-color: var(--cream);
+      background-image: radial-gradient(rgba(37,37,37,.09) .55px, transparent .55px);
+      background-size: 7px 7px;
+      font-family: var(--sans);
+      cursor: default;
+    }
+    body.menu-open { overflow: hidden; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .page-noise {
+      position: fixed; inset: 0; z-index: 50; pointer-events: none; opacity: .07;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+      mix-blend-mode: multiply;
+    }
+    .container { width: min(1280px, calc(100% - 80px)); margin: 0 auto; position: relative; }
+    .eyebrow { font-size: 10px; letter-spacing: .19em; font-weight: 800; text-transform: uppercase; }
+    .display {
+    font-family: var(--serif);
+    font-weight: 700;
+    line-height: .88;
+    letter-spacing: -.025em;
+    }
+    .section { padding: 140px 0; position: relative; }
+    .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; margin-bottom: 60px; }
+    .section-head h2 { margin: 0; font-size: clamp(54px, 8vw, 118px); }
+    .section-index { display: flex; align-items: center; gap: 10px; font-size: 10px; font-weight: 800; letter-spacing: .13em; white-space: nowrap; }
+    .section-index::before { content: ""; width: 55px; height: 1px; background: currentColor; }
+
+    /* Header */
+    .nav-wrap { position: fixed; z-index: 30; top: 20px; left: 50%; width: min(1210px, calc(100% - 40px)); transform: translateX(-50%); }
+    .nav {
+      height: 64px; padding: 0 12px 0 20px; display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid rgba(37,37,37,.15); background: rgba(245,240,229,.78); backdrop-filter: blur(12px); box-shadow: 3px 4px 0 rgba(37,37,37,.11);
+    }
+    .logo { width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; background: var(--wine); color: var(--cream); font-family: var(--serif); font-weight: 800; font-size: 17px; transform: rotate(-7deg); }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links a { font-size: 10px; letter-spacing: .12em; font-weight: 800; position: relative; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background: var(--wine); transition: width .25s ease; }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-contact { padding: 10px 14px; background: var(--graphite); color: var(--cream); font-size: 10px; font-weight: 800; letter-spacing: .1em; }
+    .menu-toggle { display: none; width: 43px; height: 43px; border: 1px solid var(--graphite); background: transparent; cursor: pointer; }
+    .menu-toggle span { display: block; width: 18px; height: 1px; margin: 5px auto; background: var(--graphite); transition: transform .2s, opacity .2s; }
+    .menu-toggle.active span:first-child { transform: translateY(6px) rotate(45deg); }
+    .menu-toggle.active span:last-child { transform: translateY(-6px) rotate(-45deg); }
+
+    /* Hero */
+    .hero { min-height: 100vh; padding: 155px 0 70px; display: flex; align-items: center; overflow: hidden; }
+    .hero .container { min-height: 680px; display: flex; flex-direction: column; justify-content: center; }
+    .hero-title {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: clamp(76px, 12.2vw, 190px);
+    letter-spacing: -0.015em;
+    }
+    .hero-title span { display: block; }
+    .hero-title span:last-child {
+    color: var(--wine);
+    margin-left: 0;
+    }
+    .hero-meta { z-index: 2; max-width: 390px; margin: 34px 0 0 12.5vw; }
+    .hero-meta .role { font-size: 11px; font-weight: 800; letter-spacing: .15em; line-height: 1.7; }
+    .hero-meta p { max-width: 320px; margin: 18px 0 0; font-size: 14px; line-height: 1.65; }
+    .hero-actions { display: flex; align-items: center; gap: 15px; margin: 27px 0 0 12.5vw; position: relative; z-index: 3; }
+    .sticker-button, .paper-button { display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 13px 20px; font-size: 10px; font-weight: 800; letter-spacing: .1em; transition: transform .25s ease, box-shadow .25s ease; }
+    .sticker-button { color: var(--cream); background: var(--wine); border-radius: 51% 49% 52% 48% / 44% 48% 52% 56%; box-shadow: 3px 5px 0 var(--deep-wine); transform: rotate(-2deg); }
+    .paper-button { border: 1px solid var(--graphite); background: var(--paper); box-shadow: 3px 4px 0 var(--graphite); transform: rotate(1.5deg); }
+    .sticker-button:hover, .paper-button:hover { transform: translateY(-4px) rotate(0); box-shadow: 5px 8px 0 var(--graphite); }
+    .experience-note { position: absolute; top: 100px; right: 12%; z-index: 5; width: 130px; padding: 16px 13px 13px; background: var(--blue); font: 700 25px/1 var(--hand); transform: rotate(8deg); box-shadow: 3px 5px 8px rgba(37,37,37,.17); }
+    .experience-note small { display: block; margin-top: 7px; font: 800 9px/1.3 var(--sans); letter-spacing: .11em; }
+    .tape { position: absolute; width: 120px; height: 29px; background: rgba(231,223,208,.78); transform: rotate(-10deg); z-index: 4; }
+    .hero-tape { top: 76px; left: 34%; }
+    .hero-arrow { position: absolute; z-index: 5; bottom: 100px; left: 3%; color: var(--wine); font: 56px var(--hand); transform: rotate(-19deg); }
+    .hero-arrow span { display: block; font: 700 19px var(--hand); margin-left: -15px; }
+    .hero-poster { position: absolute; z-index: 1; right: -2%; bottom: 5%; width: min(30vw, 360px); height: 455px; padding: 11px; background: var(--paper); box-shadow: 8px 10px 0 rgba(37,37,37,.17); transform: rotate(6deg); }
+    .poster-art { position: relative; width: 100%; height: 100%; overflow: hidden; background: var(--blue); background-image: linear-gradient(130deg, transparent 45%, rgba(158,23,56,.38) 45%, rgba(158,23,56,.38) 51%, transparent 51%), repeating-linear-gradient(0deg, rgba(37,37,37,.2) 0 1px, transparent 1px 19px); }
+    .poster-art::before { content: "A"; position: absolute; top: 24px; left: 24px; font: 800 220px/.7 var(--serif); color: var(--cream); }
+    .poster-art::after { content: "DESIGN × CODE × GAME"; position: absolute; bottom: 16px; left: 14px; width: 160px; font-size: 10px; letter-spacing: .14em; font-weight: 800; line-height: 1.5; }
+    .paperclip { position: absolute; z-index: 6; width: 28px; height: 72px; border: 4px solid #777; border-bottom: 0; border-radius: 20px 20px 0 0; transform: rotate(24deg); opacity: .8; }
+    .hero-poster .paperclip { top: -27px; left: 36px; }
+    .scroll-note { position: absolute; bottom: 5px; left: 0; z-index: 3; writing-mode: vertical-rl; font-size: 9px; font-weight: 800; letter-spacing: .15em; }
+
+    /* About */
+    .about { padding-top: 115px; }
+    .about-layout { display: grid; grid-template-columns: 1.05fr .95fr; gap: 70px; align-items: center; }
+    .about-copy { font: 500 clamp(23px, 2.7vw, 39px)/1.14 var(--serif); letter-spacing: -.035em; }
+    .about-copy strong { color: var(--wine); font-weight: 700; }
+    .about-copy p { margin: 0; }
+    .skill-scraps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; padding: 28px; background: var(--beige); position: relative; }
+    .skill-scraps::before { content: "MY TOOLBOX"; position: absolute; top: -18px; right: 13px; padding: 7px 10px; background: var(--graphite); color: var(--cream); font-size: 9px; letter-spacing: .15em; font-weight: 800; transform: rotate(3deg); }
+    .skill { min-height: 140px; padding: 17px; background: var(--paper); border: 1px solid rgba(37,37,37,.16); box-shadow: 2px 3px 0 rgba(37,37,37,.16); transform: rotate(var(--r)); }
+    .skill:nth-child(2) { background: var(--blue); }
+    .skill:nth-child(3) { background: var(--wine); color: var(--cream); }
+    .skill strong { display: block; font: 700 48px/.8 var(--serif); letter-spacing: -.06em; }
+    .skill span { display: block; margin-top: 13px; font-size: 10px; font-weight: 800; letter-spacing: .11em; line-height: 1.5; }
+    .mini-star { position: absolute; bottom: -28px; left: -35px; color: var(--wine); font: 90px/1 var(--hand); transform: rotate(-15deg); }
+
+    /* Marquee */
+    .marquee { overflow: hidden; padding: 18px 0; color: var(--cream); background: var(--wine); transform: rotate(-1.5deg) scale(1.03); }
+    .marquee-track { display: flex; width: max-content; animation: marquee 22s linear infinite; }
+    .marquee-track span { padding-right: 36px; font: 700 clamp(27px, 3vw, 45px)/1 var(--serif); letter-spacing: -.04em; white-space: nowrap; }
+    .marquee-track em { margin-right: 36px; color: var(--blue); font-style: normal; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    /* Triad */
+    .triad-title { margin: 0 auto 38px; max-width: 840px; font-size: clamp(56px, 10vw, 140px); text-align: center; }
+    .triad-title i { color: var(--wine); font-style: normal; }
+    .triad-intro { max-width: 430px; margin: 0 auto 64px; text-align: center; font-size: 15px; line-height: 1.65; }
+    .triad-grid { display: grid; grid-template-columns: 1fr 1.2fr .9fr; gap: 18px; align-items: end; }
+    .triad-card { min-height: 360px; padding: 25px; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid var(--graphite); background: var(--paper); box-shadow: 5px 6px 0 var(--graphite); transition: transform .35s ease, box-shadow .35s ease; cursor: default; }
+    .triad-card:nth-child(1) { min-height: 320px; background: var(--blue); transform: rotate(-3deg); }
+    .triad-card:nth-child(2) { background: var(--wine); color: var(--cream); transform: rotate(1deg); }
+    .triad-card:nth-child(3) { min-height: 300px; transform: rotate(4deg); }
+    .triad-card:hover { transform: translateY(-18px) rotate(0); box-shadow: 10px 14px 0 var(--graphite); }
+    .triad-number { font-size: 10px; letter-spacing: .15em; font-weight: 800; }
+    .triad-card h3 { margin: 0; font: 700 clamp(45px, 5vw, 75px)/.82 var(--serif); letter-spacing: -.07em; }
+    .triad-card p { margin: 15px 0 0; max-width: 210px; font-size: 12px; line-height: 1.55; }
+    .triad-symbol { align-self: flex-end; font: 700 55px/1 var(--hand); }
+
+    /* Services */
+    .services-board { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .service { min-height: 178px; padding: 18px; position: relative; display: flex; flex-direction: column; justify-content: space-between; border: 1px solid rgba(37,37,37,.8); background: var(--paper); transition: transform .25s ease; }
+    .service:hover { z-index: 2; transform: rotate(-2deg) translateY(-8px); }
+    .service:nth-child(1) { grid-column: span 5; background: var(--graphite); color: var(--cream); }
+    .service:nth-child(2) { grid-column: span 4; background: var(--blue); transform: rotate(2deg); }
+    .service:nth-child(3) { grid-column: span 3; }
+    .service:nth-child(4) { grid-column: span 3; min-height: 215px; transform: rotate(-2deg); }
+    .service:nth-child(5) { grid-column: span 4; min-height: 215px; background: var(--wine); color: var(--cream); }
+    .service:nth-child(6) { grid-column: span 5; min-height: 215px; }
+    .service:nth-child(7) { grid-column: span 7; background: var(--beige); }
+    .service:nth-child(8) { grid-column: span 5; background: var(--blue); }
+    .service small { font-size: 10px; font-weight: 800; letter-spacing: .13em; }
+    .service h3 { max-width: 270px; margin: 0; font: 700 clamp(23px, 2.3vw, 37px)/.91 var(--serif); letter-spacing: -.055em; }
+    .service p { max-width: 260px; margin: 12px 0 0; font-size: 11px; line-height: 1.5; }
+    .service .squiggle { position: absolute; right: 15px; bottom: 11px; font: 46px/1 var(--hand); opacity: .75; }
+
+    /* Portfolio */
+    .work-section { background: var(--graphite); color: var(--cream); }
+    .work-section .section-head { margin-bottom: 35px; }
+    .filters { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 50px; }
+    .filter { padding: 10px 14px; border: 1px solid rgba(245,240,229,.55); background: transparent; color: var(--cream); font-size: 10px; font-weight: 800; letter-spacing: .1em; cursor: pointer; transition: background .2s, color .2s, transform .2s; }
+    .filter:hover, .filter.active { background: var(--cream); color: var(--graphite); transform: rotate(-2deg); }
+    .work-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px; align-items: start; }
+    .project { position: relative; display: block; color: var(--graphite); transition: opacity .3s, transform .3s; }
+    .project.hide { display: none; }
+    .project:nth-child(1) { grid-column: 1 / span 7; }
+    .project:nth-child(2) { grid-column: 9 / span 4; margin-top: 105px; }
+    .project:nth-child(3) { grid-column: 1 / span 4; margin-top: -15px; }
+    .project:nth-child(4) { grid-column: 6 / span 7; margin-top: 30px; }
+    .project:nth-child(5) { grid-column: 2 / span 5; margin-top: 30px; }
+    .project:nth-child(6) { grid-column: 8 / span 4; margin-top: 90px; }
+    .project-card { position: relative; padding: 11px 11px 0; background: var(--paper); box-shadow: 5px 7px 0 rgba(245,240,229,.23); transform: rotate(var(--tilt)); transition: transform .35s ease, box-shadow .35s ease; }
+    .project:hover .project-card { transform: rotate(0) translateY(-9px); box-shadow: 9px 13px 0 rgba(175,193,210,.7); }
+    .project-visual { position: relative; overflow: hidden; aspect-ratio: var(--ratio); background: var(--c); }
+    .project-visual::before, .project-visual::after { content: ""; position: absolute; transition: transform .6s cubic-bezier(.2,.7,.2,1); }
+    .project:hover .project-visual::before, .project:hover .project-visual::after { transform: scale(1.12) rotate(5deg); }
+    .project-visual.p1 { background: var(--blue); }
+    .project-visual.p1::before { width: 140%; height: 46%; left: -23%; top: 28%; background: var(--wine); transform: rotate(-22deg); }
+    .project-visual.p1::after { content: "TYPE / 01"; left: 28px; bottom: 22px; color: var(--cream); font: 700 clamp(38px, 6vw, 92px)/.8 var(--serif); letter-spacing: -.08em; }
+    .project-visual.p2 { background: var(--wine); }
+    .project-visual.p2::before { width: 55%; height: 73%; top: 13%; left: 23%; background: var(--cream); border-radius: 48% 52% 45% 55%; }
+    .project-visual.p2::after { content: "A"; top: 25%; left: 33%; color: var(--wine); font: 800 130px/.7 var(--serif); }
+    .project-visual.p3 { background: var(--beige); }
+    .project-visual.p3::before { width: 110px; height: 110px; top: 20%; left: 20%; background: var(--wine); border-radius: 50%; box-shadow: 80px 100px 0 var(--blue); }
+    .project-visual.p3::after { content: "3D"; right: 15px; bottom: 11px; color: var(--graphite); font: 800 70px/.8 var(--serif); }
+    .project-visual.p4 { background: var(--cream); }
+    .project-visual.p4::before { inset: 15% 11%; background: repeating-linear-gradient(90deg, var(--graphite) 0 1px, transparent 1px 26px), repeating-linear-gradient(0deg, var(--graphite) 0 1px, transparent 1px 26px); opacity: .6; }
+    .project-visual.p4::after { content: "INTERFACE"; left: 10%; bottom: 16%; color: var(--wine); font: 700 clamp(38px, 5vw, 80px)/.8 var(--serif); }
+    .project-visual.p5 { background: var(--blue); }
+    .project-visual.p5::before { width: 70%; height: 70%; left: 15%; top: 15%; border: 10px solid var(--graphite); transform: rotate(45deg); }
+    .project-visual.p5::after { content: "WEB"; left: 14px; bottom: 13px; color: var(--graphite); font: 800 58px/.8 var(--serif); }
+    .project-visual.p6 { background: var(--wine); }
+    .project-visual.p6::before { width: 70%; height: 40%; left: 14%; top: 27%; background: var(--blue); border-radius: 50% 45% 51% 49%; }
+    .project-visual.p6::after { content: "PLAY"; left: 15px; bottom: 15px; color: var(--cream); font: 700 45px/.8 var(--serif); }
+    .project-caption { display: grid; grid-template-columns: auto 1fr auto; align-items: start; gap: 11px; padding: 13px 4px 16px; }
+    .project-caption b { font-size: 10px; letter-spacing: .11em; }
+    .project-caption span { font: 700 clamp(15px, 1.6vw, 22px)/.9 var(--serif); letter-spacing: -.04em; }
+    .project-caption small { font-size: 9px; font-weight: 800; letter-spacing: .08em; text-align: right; }
+    .project-view { position: absolute; z-index: 3; left: 50%; top: 48%; display: grid; place-items: center; width: 80px; height: 80px; border-radius: 50%; color: var(--cream); background: var(--wine); font-size: 10px; font-weight: 800; letter-spacing: .08em; transform: translate(-50%,-50%) scale(0) rotate(-25deg); transition: transform .28s ease; }
+    .project:hover .project-view { transform: translate(-50%,-50%) scale(1) rotate(0); }
+    .project .paperclip { top: -33px; right: 30px; border-color: #b7b1a8; transform: rotate(19deg) scale(.75); }
+    .portfolio-note { margin: 75px auto 0; max-width: 510px; color: var(--blue); text-align: center; font: 700 clamp(23px, 3vw, 39px)/1.05 var(--serif); letter-spacing: -.04em; }
+
+    /* Modal */
+    .case-modal { position: fixed; inset: 0; z-index: 100; display: none; overflow-y: auto; padding: 30px 20px; background: rgba(37,37,37,.85); backdrop-filter: blur(5px); }
+    .case-modal.open { display: block; }
+    .case-paper { width: min(950px, 100%); min-height: 100%; margin: 0 auto; padding: 60px; position: relative; background: var(--cream); color: var(--graphite); box-shadow: 10px 13px 0 var(--wine); }
+    .modal-close { position: absolute; top: 16px; right: 16px; width: 42px; height: 42px; border: 1px solid var(--graphite); background: var(--paper); cursor: pointer; font-size: 20px; }
+    .case-meta { display: flex; flex-wrap: wrap; gap: 10px 25px; margin-bottom: 28px; font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+    .case-title { margin: 0 0 45px; color: var(--wine); font-size: clamp(51px, 9vw, 118px); }
+    .case-hero-art { height: min(48vw, 440px); margin-bottom: 55px; background: var(--blue); }
+    .case-modal[data-project="1"] .case-hero-art { background: linear-gradient(130deg, var(--blue) 0 35%, var(--wine) 35% 55%, var(--cream) 55%); }
+    .case-modal[data-project="2"] .case-hero-art { background: radial-gradient(circle at center, var(--cream) 0 23%, var(--wine) 23% 42%, var(--blue) 42% 100%); }
+    .case-modal[data-project="3"] .case-hero-art { background: radial-gradient(circle at 30% 35%, var(--wine) 0 12%, transparent 12%), radial-gradient(circle at 65% 65%, var(--blue) 0 17%, transparent 17%), var(--beige); }
+    .case-modal[data-project="4"] .case-hero-art { background: repeating-linear-gradient(90deg, var(--graphite) 0 1px, transparent 1px 34px), repeating-linear-gradient(0deg, var(--graphite) 0 1px, transparent 1px 34px), var(--cream); }
+    .case-modal[data-project="5"] .case-hero-art { background: linear-gradient(135deg, var(--blue), var(--cream)); }
+    .case-modal[data-project="6"] .case-hero-art { background: radial-gradient(ellipse at center, var(--blue) 0 30%, var(--wine) 31% 100%); }
+    .case-content { display: grid; grid-template-columns: .8fr 1.2fr; gap: 55px; }
+    .case-content h3 { margin: 0 0 9px; color: var(--wine); font-size: 10px; letter-spacing: .15em; }
+    .case-content p { margin: 0 0 27px; font-size: 14px; line-height: 1.65; }
+    .case-gallery { display: grid; grid-template-columns: 1.2fr .8fr; gap: 18px; margin-top: 30px; }
+    .case-gallery div { min-height: 170px; background: var(--beige); }
+    .case-gallery div:last-child { background: var(--blue); transform: rotate(3deg); }
+
+    /* Process */
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+    .process { min-height: 267px; padding: 20px; display: flex; flex-direction: column; justify-content: space-between; position: relative; background: var(--paper); border: 1px solid rgba(37,37,37,.5); box-shadow: 3px 4px 0 rgba(37,37,37,.16); transform: rotate(var(--r)); transition: transform .25s; }
+    .process:nth-child(2) { background: var(--blue); }
+    .process:nth-child(3) { background: var(--wine); color: var(--cream); }
+    .process:hover { transform: rotate(0) translateY(-8px); }
+    .process b { font-size: 10px; letter-spacing: .13em; }
+    .process h3 { margin: 0 0 8px; font: 700 42px/.85 var(--serif); letter-spacing: -.07em; }
+    .process p { margin: 0; font-size: 12px; line-height: 1.5; }
+    .process::before { content: ""; position: absolute; top: -16px; left: calc(50% - 38px); width: 75px; height: 22px; background: rgba(231,223,208,.86); transform: rotate(-3deg); }
+
+    /* Why */
+    .why { padding-top: 65px; }
+    .why-board { padding: clamp(28px, 5vw, 70px); background: var(--blue); position: relative; overflow: hidden; }
+    .why-board::after { content: "A.C."; position: absolute; right: -20px; bottom: -69px; color: rgba(245,240,229,.45); font: 800 clamp(170px, 24vw, 370px)/1 var(--serif); letter-spacing: -.15em; }
+    .why-grid { position: relative; z-index: 1; display: grid; grid-template-columns: repeat(2, 1fr); gap: 45px 60px; }
+    .why-item strong { display: block; color: var(--wine); font: 700 clamp(58px, 8vw, 112px)/.7 var(--serif); letter-spacing: -.08em; }
+    .why-item h3 { margin: 12px 0 6px; font-size: 12px; letter-spacing: .12em; }
+    .why-item p { margin: 0; font-size: 13px; line-height: 1.5; }
+
+    /* CTA + footer */
+    .cta { padding: 160px 0 120px; text-align: center; overflow: hidden; }
+    .cta-note { display: inline-block; margin-bottom: 21px; padding: 11px 18px; color: var(--cream); background: var(--wine); font-size: 10px; font-weight: 800; letter-spacing: .14em; transform: rotate(-3deg); }
+    .cta h2 { max-width: 1000px; margin: 0 auto 28px; font-size: clamp(68px, 11vw, 165px); }
+    .cta h2 span { color: var(--wine); }
+    .cta p { max-width: 440px; margin: 0 auto 30px; font-size: 15px; line-height: 1.65; }
+    .contact-sheet { margin: 75px auto 0; max-width: 690px; padding: 35px; position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; text-align: left; background: var(--paper); border: 1px solid var(--graphite); box-shadow: 8px 8px 0 var(--graphite); transform: rotate(.8deg); }
+    .contact-sheet::before { content: "LET'S TALK"; position: absolute; left: -20px; top: -23px; padding: 9px 16px; color: var(--cream); background: var(--graphite); font-size: 10px; letter-spacing: .15em; font-weight: 800; transform: rotate(-4deg); }
+    .contact-name { grid-column: span 2; margin-bottom: 18px; font: 700 clamp(35px, 4.7vw, 58px)/.85 var(--serif); letter-spacing: -.07em; }
+    .contact-link { padding: 12px 0; border-top: 1px solid var(--line); font-size: 12px; font-weight: 800; transition: color .2s, padding-left .2s; }
+    .contact-link:hover { padding-left: 8px; color: var(--wine); }
+    .contact-link span { display: block; margin-bottom: 4px; color: rgba(37,37,37,.6); font-size: 9px; letter-spacing: .12em; }
+    footer { padding: 22px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; justify-content: space-between; gap: 20px; align-items: center; font-size: 9px; font-weight: 800; letter-spacing: .11em; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .container { width: min(100% - 42px, 760px); }
+      .nav-wrap { width: calc(100% - 28px); top: 14px; }
+      .nav { height: 58px; }
+      .nav-links { position: absolute; top: 67px; left: 0; right: 0; display: none; padding: 20px; flex-direction: column; align-items: stretch; background: var(--cream); border: 1px solid var(--graphite); box-shadow: 4px 5px 0 var(--graphite); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 10px 0; font-size: 12px; }
+      .nav-contact { text-align: center; }
+      .menu-toggle { display: block; }
+      .hero .container { min-height: 730px; }
+      .hero-title { font-size: clamp(76px, 15.8vw, 140px); }
+      .hero-title span:last-child { margin-left: 4vw; }
+      .hero-meta, .hero-actions { margin-left: 3vw; }
+      .hero-poster { right: -7%; bottom: 4%; width: 245px; height: 314px; opacity: .93; }
+      .experience-note { right: 4%; top: 90px; }
+      .about-layout, .case-content { grid-template-columns: 1fr; gap: 45px; }
+      .triad-grid { grid-template-columns: 1fr; max-width: 570px; margin: 0 auto; }
+      .triad-card, .triad-card:nth-child(n) { min-height: 255px; transform: rotate(var(--r)); }
+      .process-grid { grid-template-columns: repeat(2, 1fr); gap: 25px 14px; }
+      .services-board { grid-template-columns: repeat(6, 1fr); }
+      .service:nth-child(n) { grid-column: span 3; min-height: 180px; }
+      .service:nth-child(1), .service:nth-child(6), .service:nth-child(7) { grid-column: span 6; }
+      .work-grid { gap: 17px; }
+      .project:nth-child(1) { grid-column: 1 / span 8; }
+      .project:nth-child(2) { grid-column: 9 / span 4; margin-top: 70px; }
+      .project:nth-child(3) { grid-column: 1 / span 5; }
+      .project:nth-child(4) { grid-column: 6 / span 7; }
+      .project:nth-child(5) { grid-column: 1 / span 7; }
+      .project:nth-child(6) { grid-column: 9 / span 4; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: calc(100% - 30px); }
+      .section { padding: 88px 0; }
+      .section-head { align-items: flex-start; flex-direction: column; gap: 14px; margin-bottom: 36px; }
+      .section-index { font-size: 9px; }
+      .hero { padding-top: 105px; min-height: 730px; align-items: flex-start; }
+      .hero .container { min-height: 625px; justify-content: flex-start; }
+      .hero-title { margin-top: 54px; font-size: clamp(61px, 19vw, 100px); line-height: .77; }
+      .hero-title span:last-child { margin-top: 4px; margin-left: 1vw; }
+      .hero-meta { margin: 29px 0 0; max-width: 270px; }
+      .hero-meta .role { font-size: 9px; }
+      .hero-meta p { font-size: 12px; }
+      .hero-actions { flex-direction: column; align-items: flex-start; margin: 22px 0 0; gap: 13px; }
+      .sticker-button, .paper-button { min-height: 45px; padding: 10px 15px; font-size: 9px; }
+      .hero-poster { right: -35px; bottom: 5px; width: 163px; height: 216px; padding: 7px; transform: rotate(7deg); }
+      .poster-art::before { top: 17px; left: 14px; font-size: 120px; }
+      .poster-art::after { bottom: 9px; left: 8px; width: 95px; font-size: 6px; }
+      .hero-poster .paperclip { transform: rotate(24deg) scale(.65); }
+      .experience-note { top: 24px; right: 3%; width: 105px; padding: 13px 10px 10px; font-size: 20px; }
+      .experience-note small { font-size: 7px; }
+      .hero-tape { top: 33px; left: 31%; width: 87px; height: 21px; }
+      .hero-arrow, .scroll-note { display: none; }
+      .about { padding-top: 88px; }
+      .about-copy { font-size: 25px; }
+      .skill-scraps { gap: 10px; padding: 17px; }
+      .skill { min-height: 114px; padding: 12px; }
+      .skill strong { font-size: 38px; }
+      .skill span { margin-top: 9px; font-size: 8px; }
+      .mini-star { display: none; }
+      .triad-title { font-size: 65px; }
+      .triad-intro { margin-bottom: 36px; font-size: 13px; }
+      .triad-card, .triad-card:nth-child(n) { min-height: 215px; padding: 19px; }
+      .triad-card h3 { font-size: 58px; }
+      .services-board { grid-template-columns: 1fr 1fr; gap: 11px; }
+      .service:nth-child(n) { grid-column: span 1; min-height: 173px; padding: 14px; transform: none; }
+      .service:nth-child(1), .service:nth-child(6), .service:nth-child(7) { grid-column: span 2; }
+      .service h3 { font-size: 25px; }
+      .service p { font-size: 9px; }
+      .work-section .container { width: calc(100% - 30px); }
+      .filters { gap: 7px; margin-bottom: 30px; }
+      .filter { padding: 8px 10px; font-size: 8px; }
+      .work-grid { display: block; }
+      .project, .project:nth-child(n) { margin: 0 0 29px; }
+      .project:nth-child(even) { width: 88%; margin-left: auto; }
+      .project:nth-child(3n) { width: 92%; margin-left: 0; }
+      .project-card { padding: 8px 8px 0; }
+      .project-caption { padding: 10px 2px 12px; }
+      .project-caption span { font-size: 18px; }
+      .project .paperclip { display: none; }
+      .portfolio-note { margin-top: 41px; font-size: 27px; }
+      .case-modal { padding: 15px 10px; }
+      .case-paper { padding: 45px 20px 28px; }
+      .case-title { margin-bottom: 27px; }
+      .case-hero-art { height: 245px; margin-bottom: 32px; }
+      .case-gallery { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: 1fr; gap: 25px; }
+      .process { min-height: 205px; }
+      .why { padding-top: 25px; }
+      .why-board { padding: 35px 24px; }
+      .why-grid { gap: 34px; }
+      .why-item strong { font-size: 66px; }
+      .why-item h3 { font-size: 10px; }
+      .why-item p { font-size: 11px; }
+      .cta { padding: 100px 0 75px; }
+      .cta h2 { font-size: 70px; }
+      .cta p { font-size: 13px; }
+      .contact-sheet { grid-template-columns: 1fr; gap: 0; padding: 27px 19px 19px; }
+      .contact-name { grid-column: span 1; font-size: 43px; }
+      .contact-link { font-size: 11px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; line-height: 1.5; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } }
+
+        /* Компактные заголовки: обо мне, работы, услуги, процесс */
+    .section-head h2 {
+    font-size: clamp(42px, 5.8vw, 78px);
+    line-height: 0.92;
+    letter-spacing: -0.015em;
+    }
+
+
+        /* CTA — намеренно меньше остальных главных заголовков */
+    .cta h2 {
+    max-width: 780px;
+    font-size: clamp(42px, 6.2vw, 92px);
+    line-height: 0.93;
+    letter-spacing: -0.015em;
+    }
+
+    /* Имя в первом экране */
+    .hero-title {
+    font-size: clamp(64px, 10.5vw, 155px);
+    line-height: 0.84;
+    }
+
+    /* Design × Code × Game */
+    .triad-title {
+    font-size: clamp(48px, 8vw, 108px);
+    line-height: 0.88;
+    }
+
+    /* «Что я делаю» и «От идеи до результата» */
+    .section-head h2 {
+    font-size: clamp(46px, 6.5vw, 92px);
+    line-height: 0.88;
+    }
+
+    /* Текст под портфолио */
+    .portfolio-note {
+    font-size: clamp(18px, 2vw, 28px);
+    line-height: 1.08;
+    }
+
+    /* Большая цифра в блоке преимуществ */
+    .why-item strong {
+    font-size: clamp(50px, 6vw, 84px);
+    line-height: 0.78;
+    }
+    
+    /* =====================================================
+       INTERACTIVE STICKER — CLEAN VERSION
+       ===================================================== */
+    .sticker-interaction {
+      position: absolute;
+      z-index: 12;
+      top: 40%;
+      right: 25%;
+      width: 320px;
+      height: 255px;
+      overflow: visible;
+      pointer-events: none;
+    }
+
+    .pull-sticker {
+      --drag-x: 0px;
+      --drag-y: 0px;
+      position: absolute;
+      z-index: 3;
+      top: 35px;
+      left: 24px;
+      display: block;
+      width: 240px;
+      min-height: 170px;
+      padding: 33px 26px 24px;
+      border: 1px solid rgba(37, 37, 37, .55);
+      color: var(--cream);
+      background: var(--wine);
+      box-shadow: 6px 9px 0 var(--deep-wine), 0 15px 26px rgba(37, 37, 37, .16);
+      clip-path: polygon(0 3%,8% 0,19% 3%,31% 1%,43% 4%,55% 0,67% 3%,79% 1%,91% 4%,100% 1%,98% 17%,100% 33%,97% 49%,100% 66%,98% 81%,100% 100%,85% 97%,73% 100%,59% 97%,46% 100%,31% 98%,17% 100%,0 96%,3% 81%,0 66%,3% 52%,0 37%,2% 21%);
+      cursor: grab;
+      user-select: none;
+      touch-action: none;
+      pointer-events: auto;
+      transform: translate(var(--drag-x), var(--drag-y)) rotate(-4deg);
+      transition: transform .3s cubic-bezier(.2,.8,.2,1), opacity .3s ease, visibility .3s ease, box-shadow .3s ease;
+    }
+
+    .pull-sticker:hover {
+      transform: translate(var(--drag-x), calc(var(--drag-y) - 8px)) rotate(-1deg) scale(1.04);
+      box-shadow: 9px 15px 0 var(--deep-wine), 0 20px 28px rgba(37,37,37,.22);
+    }
+
+    .pull-sticker.dragging {
+      cursor: grabbing;
+      transition: none;
+      transform: translate(var(--drag-x), var(--drag-y)) rotate(7deg) scale(1.08);
+    }
+
+    .pull-sticker.opened {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate(calc(var(--drag-x) + 145px), calc(var(--drag-y) - 100px)) rotate(22deg) scale(.7);
+    }
+
+    .sticker-tape {
+      position: absolute;
+      top: -20px;
+      right: 37px;
+      width: 100px;
+      height: 31px;
+      background: rgba(231,223,208,.82);
+      box-shadow: 0 1px 2px rgba(37,37,37,.12);
+      transform: rotate(7deg);
+    }
+
+    .sticker-label {
+      position: relative;
+      z-index: 1;
+      display: block;
+      color: var(--cream);
+      font: 700 39px/.84 var(--serif);
+      letter-spacing: -.01em;
+    }
+
+    .sticker-subtitle {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-top: 18px;
+      color: var(--blue);
+      font: 700 22px/.82 var(--hand);
+      transform: rotate(-3deg);
+    }
+
+    .sticker-hand {
+      position: absolute;
+      z-index: 1;
+      right: 16px;
+      bottom: 11px;
+      color: var(--blue);
+      font: 700 57px/.8 var(--hand);
+      transform: rotate(-13deg);
+    }
+
+    .glue-trace {
+      position: absolute;
+      z-index: 1;
+      top: 41px;
+      left: 29px;
+      width: 228px;
+      height: 160px;
+      opacity: 0;
+      visibility: hidden;
+      background: rgba(231,223,208,.72);
+      border: 1px dashed rgba(37,37,37,.24);
+      clip-path: polygon(0 3%,8% 0,19% 3%,31% 1%,43% 4%,55% 0,67% 3%,79% 1%,91% 4%,100% 1%,98% 17%,100% 33%,97% 49%,100% 66%,98% 81%,100% 100%,85% 97%,73% 100%,59% 97%,46% 100%,31% 98%,17% 100%,0 96%,3% 81%,0 66%,3% 52%,0 37%,2% 21%);
+      transform: rotate(-4deg) scale(.92);
+      transition: opacity .35s ease, visibility .35s ease, transform .45s ease;
+    }
+
+    .sticker-interaction.is-dragging .glue-trace,
+    .sticker-interaction.is-opened .glue-trace {
+      opacity: 1;
+      visibility: visible;
+      transform: rotate(-4deg) scale(1);
+    }
+
+    .secret-note {
+      position: absolute;
+      z-index: 2;
+      top: -44px;
+      left: -28px;
+      width: 365px;
+      min-height: 325px;
+      padding: 39px 31px 27px;
+      color: var(--graphite);
+      background-color: var(--paper);
+      background-image: radial-gradient(rgba(37,37,37,.08) .5px, transparent .5px);
+      background-size: 6px 6px;
+      border: 1px solid rgba(37,37,37,.58);
+      box-shadow: 5px 7px 0 rgba(37,37,37,.28);
+      clip-path: polygon(0 2%,9% 0,19% 2%,31% 0,43% 3%,56% 1%,68% 3%,80% 0,91% 2%,100% 0,98% 16%,100% 31%,97% 46%,100% 62%,98% 79%,100% 100%,87% 97%,75% 100%,62% 97%,47% 100%,33% 97%,18% 100%,0 97%,2% 82%,0 67%,3% 52%,0 37%,2% 19%);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(28px) rotate(-8deg) scale(.93);
+      transition: opacity .45s ease, visibility .45s ease, transform .6s cubic-bezier(.2,.9,.2,1);
+    }
+
+    .secret-note.visible {
+      z-index: 5;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0) rotate(-3deg) scale(1);
+    }
+
+    .note-tape { position:absolute; top:-14px; left:39px; width:102px; height:25px; background:rgba(175,193,210,.68); transform:rotate(-7deg); }
+    .note-clip { position:absolute; top:-18px; right:24px; width:20px; height:55px; border:3px solid #7e7e7e; border-bottom:0; border-radius:15px 15px 0 0; opacity:.83; transform:rotate(19deg); }
+    .note-close { position:absolute; z-index:2; top:13px; right:13px; width:26px; height:26px; padding:0; border:1px solid var(--graphite); border-radius:50%; color:var(--graphite); background:var(--blue); font-size:19px; line-height:1; cursor:pointer; }
+    .note-number { display:block; margin-bottom:18px; color:var(--wine); font-size:11px; font-weight:800; letter-spacing:.15em; }
+    .secret-note h2 { margin:0; color:var(--wine); font:700 39px/.87 var(--serif); letter-spacing:-.01em; }
+    .secret-note p { margin:22px 0 25px; font-size:15px; font-weight:600; line-height:1.52; }
+    .note-footer { display:flex; justify-content:space-between; gap:8px; padding-top:13px; border-top:1px solid rgba(37,37,37,.28); font-size:8px; font-weight:800; letter-spacing:.09em; }
+    .note-star { position:absolute; right:18px; bottom:40px; color:var(--wine); font:700 36px/1 var(--hand); transform:rotate(17deg); }
+    .note-arrow { position:absolute; left:9px; bottom:40px; color:var(--blue); font:700 39px/1 var(--hand); transform:rotate(-20deg); }
+
+    @media (max-width: 900px) {
+      .sticker-interaction { top:auto; right:21%; bottom:78px; transform:scale(.78); transform-origin:right bottom; }
+    }
+
+    @media (max-width: 620px) {
+      .sticker-interaction { right:95px; bottom:12px; transform:scale(.48); transform-origin:right bottom; }
+      .pull-sticker { cursor:pointer; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .pull-sticker, .secret-note, .glue-trace { transition-duration:.01ms !important; }
+    }
+  </style>
+  <link rel="stylesheet" href="portfolio.css" />
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+
+  <div class="nav-wrap">
+    <nav class="nav" aria-label="Основная навигация">
+      <a class="logo" href="#home" aria-label="На главную">A.C.</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">ГЛАВНАЯ</a>
+        <a href="#about">ОБО МНЕ</a>
+        <a href="#services">УСЛУГИ</a>
+        <a href="#work">РАБОТЫ</a>
+        <a class="nav-contact" href="#contact">КОНТАКТЫ ↗</a>
+      </div>
+      <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+    </nav>
+  </div>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+                <!-- INTERACTIVE STICKER -->
+        <div class="sticker-interaction" id="stickerInteraction" aria-live="polite">
+        <div class="glue-trace" aria-hidden="true"></div>
+        <aside class="secret-note" id="secretNote" aria-hidden="true">
+            <div class="note-tape" aria-hidden="true"></div>
+            <span class="note-clip" aria-hidden="true"></span>
+            <button class="note-close" id="noteClose" type="button" aria-label="Свернуть заметку">×</button>
+            <span class="note-number">NOTE #01</span>
+            <h2>ДИЗАЙН НЕ ОБЯЗАН<br>БЫТЬ ТИХИМ.</h2>
+            <p>Сначала идея.<br>Потом форма.<br>Потом код заставляет её работать.</p>
+            <div class="note-footer">
+            <span>DESIGN × CODE × GAME</span>
+            <span>A.C. / 2026</span>
+            </div>
+            <span class="note-star" aria-hidden="true">✦</span>
+            <span class="note-arrow" aria-hidden="true">←</span>
+        </aside>
+        <button class="pull-sticker" id="pullSticker" type="button" aria-describedby="stickerHint">
+            <span class="sticker-tape" aria-hidden="true"></span>
+            <span class="sticker-hand" aria-hidden="true">↙</span>
+            <span class="sticker-label">ОТКЛЕЙ<br>МЕНЯ →</span>
+            <span class="sticker-subtitle">a small note<br>from A.C.</span>
+        </button>
+        </div>
+
+        <div class="tape hero-tape" aria-hidden="true"></div>
+        <div class="experience-note" data-parallax=".08">4+<small>YEARS OF EXPERIENCE</small></div>
+        <p class="hero-arrow" data-parallax="-.08"><span>scroll to explore</span>↘</p>
+        <h1 class="hero-title display reveal"><span>АЛЕКСАНДРА</span><span>ЧИКУРОВА</span></h1>
+        <div class="hero-meta reveal">
+          <div class="role">DESIGNER · DIGITAL · 3D · GAME</div>
+          <p>Создаю визуальные решения, digital-проекты и идеи, которые хочется рассматривать.</p>
+        </div>
+        <div class="hero-actions reveal">
+          <a href="#work" class="sticker-button">СМОТРЕТЬ РАБОТЫ ↘</a>
+          <a href="#contact" class="paper-button">СВЯЗАТЬСЯ СО МНОЙ →</a>
+        </div>
+        <div class="hero-poster" data-parallax=".04" aria-label="Декоративный постер Design Code Game">
+          <i class="paperclip" aria-hidden="true"></i>
+          <div class="poster-art"></div>
+        </div>
+        <div class="scroll-note">01 / PERSONAL DIGITAL SCRAPBOOK</div>
+      </div>
+    </section>
+
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="display">ОБО МНЕ</h2>
+          <div class="section-index">02 / ABOUT THE DESIGNER</div>
+        </div>
+        <div class="about-layout">
+          <div class="about-copy reveal">
+            <p>Я <strong>Александра Чикурова</strong> — дизайнер с опытом более 4 лет. Работаю с графикой, веб-дизайном, интерфейсами, 3D и digital-проектами. Также занимаюсь разработкой игровых идей и работаю с Python и C++.</p>
+            <p style="margin-top:22px">Мне интересно соединять визуальную часть проекта с его идеей, логикой и технической стороной.</p>
+          </div>
+          <div class="skill-scraps reveal">
+            <div class="skill" style="--r:-2deg"><strong>4+</strong><span>YEARS<br>IN DESIGN</span></div>
+            <div class="skill" style="--r:3deg"><strong>DESIGN</strong><span>GRAPHIC / WEB / UI</span></div>
+            <div class="skill" style="--r:1deg"><strong>3D</strong><span>VISUAL<br>EXPERIMENTS</span></div>
+            <div class="skill" style="--r:-3deg"><strong>CODE</strong><span>PYTHON / C++<br>GAME IDEAS</span></div>
+            <div class="mini-star" aria-hidden="true">✦</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="marquee-track"><div class="marquee-group"><span class="marquee-word">DESIGN</span><span class="marquee-separator">—</span><span class="marquee-word">CODE</span><span class="marquee-separator">—</span><span class="marquee-word">GAME</span><span class="marquee-separator">—</span><span class="marquee-word">3D</span><span class="marquee-separator">—</span><span class="marquee-word">DIGITAL</span><span class="marquee-separator">—</span><span class="marquee-word">DESIGN</span><span class="marquee-separator">—</span><span class="marquee-word">CODE</span><span class="marquee-separator">—</span><span class="marquee-word">GAME</span><span class="marquee-separator">—</span><span class="marquee-word">3D</span><span class="marquee-separator">—</span><span class="marquee-word">DIGITAL</span><span class="marquee-separator">—</span></div><div class="marquee-group"><span class="marquee-word">DESIGN</span><span class="marquee-separator">—</span><span class="marquee-word">CODE</span><span class="marquee-separator">—</span><span class="marquee-word">GAME</span><span class="marquee-separator">—</span><span class="marquee-word">3D</span><span class="marquee-separator">—</span><span class="marquee-word">DIGITAL</span><span class="marquee-separator">—</span><span class="marquee-word">DESIGN</span><span class="marquee-separator">—</span><span class="marquee-word">CODE</span><span class="marquee-separator">—</span><span class="marquee-word">GAME</span><span class="marquee-separator">—</span><span class="marquee-word">3D</span><span class="marquee-separator">—</span><span class="marquee-word">DIGITAL</span><span class="marquee-separator">—</span></div></div></div>
+
+    <section class="section triad">
+      <div class="container">
+        <h2 class="triad-title display reveal">DESIGN <i>×</i> CODE <i>×</i> GAME</h2>
+        <p class="triad-intro reveal">Я люблю находить связь между визуальным образом, идеей и тем, как проект работает изнутри.</p>
+        <div class="triad-grid">
+          <article class="triad-card reveal" style="--r:-3deg"><span class="triad-number">01 — DISCOVER</span><div><h3>DESIGN</h3><p>Графический дизайн, веб, интерфейсы и визуальные концепции.</p></div><span class="triad-symbol">✦</span></article>
+          <article class="triad-card reveal" style="--r:1deg"><span class="triad-number">02 — BUILD</span><div><h3>CODE</h3><p>Python и C++. Понимаю техническую сторону digital-проектов.</p></div><span class="triad-symbol">&lt;/&gt;</span></article>
+          <article class="triad-card reveal" style="--r:4deg"><span class="triad-number">03 — PLAY</span><div><h3>GAME</h3><p>Игровые идеи, концепции, миры и дизайн игрового опыта.</p></div><span class="triad-symbol">→</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal"><h2 class="display">ЧТО Я<br>ДЕЛАЮ</h2><div class="section-index">03 / SERVICES</div></div>
+        <div class="services-board">
+          <article class="service reveal"><small>01</small><div><h3>ГРАФИЧЕСКИЙ ДИЗАЙН</h3><p>Визитки, плакаты, рекламные материалы, визуальные концепции.</p></div><span class="squiggle">↗</span><a class="service-link" href="#work" data-service-filter="graphic">Смотреть работы ↗</a></article>
+          <article class="service reveal"><small>02</small><div><h3>WEB DESIGN</h3><p>Сайты, лендинги и одностраничные digital-истории.</p></div><a class="service-link" href="#work" data-service-filter="web">Смотреть работы ↗</a></article>
+          <article class="service reveal"><small>03</small><div><h3>UI / UX</h3><p>Интерфейсы сайтов и мобильных приложений.</p></div><a class="service-link" href="#work" data-service-filter="uiux">Смотреть работы ↗</a></article>
+          <article class="service reveal"><small>04</small><div><h3>BRANDING</h3><p>Логотипы, фирменный стиль и визуальные системы.</p></div><a class="service-link" href="#work" data-service-filter="branding">Смотреть работы ↗</a></article>
+          <article class="service reveal"><small>05</small><div><h3>3D</h3><p>Визуализации и экспериментальные проекты.</p></div><span class="squiggle">✦</span><a class="service-link" href="#work" data-service-filter="3d">Смотреть работы ↗</a></article>
+          <article class="service reveal"><small>06</small><div><h3>GAME DESIGN</h3><p>Идеи игр, концепции, визуальный стиль и игровые проекты.</p></div><a class="service-link" href="#work" data-service-filter="game">Смотреть работы ↗</a></article>
+          <article class="service reveal"><small>07</small><div><h3>DIGITAL</h3><p>Digital-материалы и визуальные решения для онлайн-проектов.</p></div><a class="service-link" href="#work" data-service-filter="digital">Смотреть работы ↗</a></article>
+          <article class="service reveal"><small>08</small><div><h3>DEVELOPMENT</h3><p>Работа с Python и C++.</p></div><span class="squiggle">{ }</span><a class="service-link" href="#work" data-service-filter="development">О направлении ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section work-section" id="work">
+      <div class="container">
+        <div class="section-head reveal"><h2 class="display">МОИ РАБОТЫ</h2><div class="section-index">04 / SELECTED WORKS / 13 PROJECTS</div></div>
+        <p class="work-intro reveal">От айдентики до игровых миров. Выберите направление или откройте проект, чтобы рассмотреть идею, детали и материалы.</p>
+        <div class="work-toolbar"><div class="filters reveal" role="group" aria-label="Фильтры работ"><button class="filter active" data-filter="all" aria-pressed="true">ВСЕ <small>13</small></button><button class="filter" data-filter="graphic" aria-pressed="false">ГРАФИЧЕСКИЙ ДИЗАЙН <small>8</small></button><button class="filter" data-filter="web" aria-pressed="false">WEB DESIGN <small>3</small></button><button class="filter" data-filter="uiux" aria-pressed="false">UI / UX <small>3</small></button><button class="filter" data-filter="branding" aria-pressed="false">BRANDING <small>4</small></button><button class="filter" data-filter="3d" aria-pressed="false">3D <small>1</small></button><button class="filter" data-filter="game" aria-pressed="false">GAME DESIGN <small>1</small></button><button class="filter" data-filter="digital" aria-pressed="false">DIGITAL <small>2</small></button><button class="filter" data-filter="development" aria-pressed="false">DEVELOPMENT <small>0</small></button></div><p class="work-status" role="status" aria-live="polite">Все направления · 13 проектов</p></div>
+        <div class="work-grid"><a href="#case-tatneft" class="project reveal" data-category="graphic digital" data-case="tatneft" aria-label="Татнефть — Рекламно-имиджевая концепция. Открыть проект">
+      <div class="project-card" style="--tilt:-1.4deg"><img class="project-visual" src="assets/tatneft-slide-1.webp" alt="Татнефть: Рекламно-имиджевая концепция" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>01</b><span>Татнефть<span class="project-subtitle">Рекламно-имиджевая концепция</span></span><small>ГРАФИЧЕСКИЙ ДИЗАЙН<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-be-here" class="project reveal" data-category="branding graphic" data-case="be-here" aria-label="Be Here — Айдентика студии йоги. Открыть проект">
+      <div class="project-card" style="--tilt:1.6deg"><img class="project-visual" src="assets/be-here-slide-1.webp" alt="Be Here: Айдентика студии йоги" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>02</b><span>Be Here<span class="project-subtitle">Айдентика студии йоги</span></span><small>BRANDING<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-skillmatch" class="project reveal" data-category="web uiux" data-case="skillmatch" aria-label="SkillMatch — Платформа поиска менторов. Открыть проект">
+      <div class="project-card" style="--tilt:-0.8deg"><img class="project-visual" src="assets/skillmatch-slide-1.webp" alt="SkillMatch: Платформа поиска менторов" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>03</b><span>SkillMatch<span class="project-subtitle">Платформа поиска менторов</span></span><small>WEB DESIGN<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-coach" class="project reveal" data-category="uiux web" data-case="coach" aria-label="COACH — Тренировки с игровым подходом. Открыть проект">
+      <div class="project-card" style="--tilt:1.2deg"><img class="project-visual" src="assets/coach-slide-1.webp" alt="COACH: Тренировки с игровым подходом" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>04</b><span>COACH<span class="project-subtitle">Тренировки с игровым подходом</span></span><small>UI / UX<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-art-platform" class="project reveal" data-category="uiux web" data-case="art-platform" aria-label="Искусство ближе — Образовательная платформа об искусстве. Открыть проект">
+      <div class="project-card" style="--tilt:-1.4deg"><img class="project-visual" src="assets/art-platform-1.webp" alt="Искусство ближе: Образовательная платформа об искусстве" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>05</b><span>Искусство ближе<span class="project-subtitle">Образовательная платформа об искусстве</span></span><small>UI / UX<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-future-play" class="project reveal" data-category="graphic digital" data-case="future-play" aria-label="Future Play — Афиша и баннер выставки. Открыть проект">
+      <div class="project-card" style="--tilt:1.6deg"><img class="project-visual" src="assets/future-play-slide-1.webp" alt="Future Play: Афиша и баннер выставки" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>06</b><span>Future Play<span class="project-subtitle">Афиша и баннер выставки</span></span><small>ГРАФИЧЕСКИЙ ДИЗАЙН<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-nature" class="project reveal" data-category="graphic" data-case="nature" aria-label="Хрупкая природа — Графика выставки бабочек и стрекоз. Открыть проект">
+      <div class="project-card" style="--tilt:-0.8deg"><img class="project-visual" src="assets/nature-slide-1.webp" alt="Хрупкая природа: Графика выставки бабочек и стрекоз" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>07</b><span>Хрупкая природа<span class="project-subtitle">Графика выставки бабочек и стрекоз</span></span><small>ГРАФИЧЕСКИЙ ДИЗАЙН<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-doruma" class="project reveal" data-category="graphic branding" data-case="doruma" aria-label="DORUMA — Визуальный язык японского театра. Открыть проект">
+      <div class="project-card" style="--tilt:1.2deg"><img class="project-visual" src="assets/doruma-slide-1.webp" alt="DORUMA: Визуальный язык японского театра" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>08</b><span>DORUMA<span class="project-subtitle">Визуальный язык японского театра</span></span><small>ГРАФИЧЕСКИЙ ДИЗАЙН<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-recycle" class="project reveal" data-category="graphic" data-case="recycle" aria-label="Начни с сортировки — Информационный буклет об экологии. Открыть проект">
+      <div class="project-card" style="--tilt:-1.4deg"><img class="project-visual" src="assets/recycle-slide-1.webp" alt="Начни с сортировки: Информационный буклет об экологии" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>09</b><span>Начни с сортировки<span class="project-subtitle">Информационный буклет об экологии</span></span><small>ГРАФИЧЕСКИЙ ДИЗАЙН<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-forest-key" class="project reveal" data-category="branding graphic" data-case="forest-key" aria-label="Лесной ключ — Знак из четырёх ассоциаций. Открыть проект">
+      <div class="project-card" style="--tilt:1.6deg"><img class="project-visual" src="assets/forest-key-slide-1.webp" alt="Лесной ключ: Знак из четырёх ассоциаций" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>10</b><span>Лесной ключ<span class="project-subtitle">Знак из четырёх ассоциаций</span></span><small>BRANDING<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-nomad" class="project reveal" data-category="branding graphic" data-case="nomad" aria-label="Кочевье — Айдентика о путешествиях и культуре. Открыть проект">
+      <div class="project-card" style="--tilt:-0.8deg"><img class="project-visual" src="assets/nomad-slide-1.webp" alt="Кочевье: Айдентика о путешествиях и культуре" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>11</b><span>Кочевье<span class="project-subtitle">Айдентика о путешествиях и культуре</span></span><small>BRANDING<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-cyber-city" class="project reveal" data-category="3d" data-case="cyber-city" aria-label="Ночной город — 3D-сцена в неоновом свете. Открыть проект">
+      <div class="project-card" style="--tilt:1.2deg"><img class="project-visual" src="assets/cyber-city-slide-1.webp" alt="Ночной город: 3D-сцена в неоновом свете" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>12</b><span>Ночной город<span class="project-subtitle">3D-сцена в неоновом свете</span></span><small>3D<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a><a href="#case-quiet-town" class="project reveal" data-category="game" data-case="quiet-town" aria-label="Город подождёт — Игровая среда и стартовый экран. Открыть проект">
+      <div class="project-card" style="--tilt:-1.4deg"><img class="project-visual" src="assets/quiet-town-1.webp" alt="Город подождёт: Игровая среда и стартовый экран" loading="lazy" width="1200" height="923" />
+      <div class="project-caption"><b>13</b><span>Город подождёт<span class="project-subtitle">Игровая среда и стартовый экран</span></span><small>GAME DESIGN<br>ОТКРЫТЬ ↗</small></div><div class="project-view" aria-hidden="true">СМОТРЕТЬ<br>ПРОЕКТ ↗</div></div></a></div>
+        <p class="empty-state" hidden>В этой подборке пока нет отдельных кейсов по Python и C++. Здесь появятся проекты с исходным кодом, описанием задачи и демонстрацией результата.</p>
+        <p class="portfolio-note reveal">Каждая работа — отдельная история.<br>Больше деталей и полные макеты — внутри кейсов.</p>
+      </div></section>
+      <dialog class="case-modal" id="case-tatneft" aria-labelledby="title-tatneft"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-tatneft">Татнефть</h2><p>Рекламно-имиджевая концепция</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/tatneft-slide-1.webp&quot;, &quot;label&quot;: &quot;Плакаты для KazanForum&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 1702}, {&quot;src&quot;: &quot;assets/tatneft-slide-2.webp&quot;, &quot;label&quot;: &quot;Стенд с конём&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 1228}, {&quot;src&quot;: &quot;assets/tatneft-slide-3.webp&quot;, &quot;label&quot;: &quot;Рекламный щит&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 1238}, {&quot;src&quot;: &quot;assets/tatneft-slide-4.webp&quot;, &quot;label&quot;: &quot;Стенд с зелёным орнаментом&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 1228}, {&quot;src&quot;: &quot;assets/tatneft-slide-5.webp&quot;, &quot;label&quot;: &quot;Стенд нефтехимического форума&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 1238}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Татнефть">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/tatneft-slide-1.webp" width="2200" height="1702" alt="Татнефть — Плакаты для KazanForum" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 05</b><span>Плакаты для KazanForum</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/tatneft-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Конкурсный проект для «Татнефти»: рекламные плакаты и варианты выставочных стендов.</p></section><section><h3>ЗАДАЧА</h3><p>Разместить рекламные сообщения на щитах и стендах разного размера.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>В зелёной серии использованы листья, тюльпаны и орнамент. В светлой — красно-чёрный конь и крупные белые поверхности. Логотипы и основные сообщения вынесены на заметные участки.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>В галерее — пять изображений: плакаты, рекламный щит и три варианта стенда. Это мокапы предложенного оформления.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-16886" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-be-here" aria-labelledby="title-be-here"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-be-here">Be Here</h2><p>Айдентика студии йоги</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/be-here-slide-1.webp&quot;, &quot;label&quot;: &quot;Визитки Be Here&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 1255}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Be Here">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/be-here-slide-1.webp" width="2200" height="1255" alt="Be Here — Визитки Be Here" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 01</b><span>Визитки Be Here</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/be-here-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Айдентика студии йоги Be Here: логотип, знак, палитра и визитки.</p></section><section><h3>ЗАДАЧА</h3><p>Разместить название, знак и контакты на двух сторонах визитки.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Голубой фон сочетается с розово-жёлтым пятном. На лицевой стороне — название студии, на обороте — знак и контактные данные.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Мокап показывает обе стороны визиток и несколько карточек рядом. Полный макет айдентики доступен по ссылке в Figma.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-16587" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-skillmatch" aria-labelledby="title-skillmatch"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-skillmatch">SkillMatch</h2><p>Платформа поиска менторов</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/skillmatch-slide-1.webp&quot;, &quot;label&quot;: &quot;Главная&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 2470}, {&quot;src&quot;: &quot;assets/skillmatch-slide-2.webp&quot;, &quot;label&quot;: &quot;Менторы&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 3847}, {&quot;src&quot;: &quot;assets/skillmatch-slide-3.webp&quot;, &quot;label&quot;: &quot;Вопросы&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 1943}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта SkillMatch">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/skillmatch-slide-1.webp" width="2200" height="2470" alt="SkillMatch — Главная" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 03</b><span>Главная</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/skillmatch-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Дизайн сайта SkillMatch для поиска ментора. Три страницы: главная, каталог специалистов и вопросы.</p></section><section><h3>ЗАДАЧА</h3><p>Показать, как устроено менторство, дать сравнить специалистов и найти ответы до записи.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Зелёный градиент проходит через все страницы. В каталоге крупные имена и портреты соседствуют с опытом, навыками и кнопками записи.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Главная объясняет предложение, каталог знакомит с менторами, страница вопросов объединяет форму обращения и ответы.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-16639" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-coach" aria-labelledby="title-coach"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-coach">COACH</h2><p>Тренировки с игровым подходом</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/coach-slide-1.webp&quot;, &quot;label&quot;: &quot;Анкета&quot;, &quot;width&quot;: 519, &quot;height&quot;: 925}, {&quot;src&quot;: &quot;assets/coach-slide-2.webp&quot;, &quot;label&quot;: &quot;Тренировки и чат&quot;, &quot;width&quot;: 536, &quot;height&quot;: 944}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта COACH">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/coach-slide-1.webp" width="519" height="925" alt="COACH — Анкета" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 02</b><span>Анкета</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/coach-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Экраны фитнес-приложения COACH: анкета пользователя, список тренировок и чат с помощником.</p></section><section><h3>ЗАДАЧА</h3><p>Продумать начало работы: заполнение анкеты, переход к тренировке и возможность задать вопрос.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Фиолетовые блоки выделяют форму и этапы тренировки на тёмном фоне. Персонаж-робот встречает пользователя в анкете и появляется рядом с тренировками.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Первый экран собирает данные о пользователе, второй показывает этапы занятий и переписку с помощником.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-16901" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-art-platform" aria-labelledby="title-art-platform"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-art-platform">Искусство ближе</h2><p>Образовательная платформа об искусстве</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/art-platform-1.webp&quot;, &quot;label&quot;: &quot;Темы&quot;, &quot;width&quot;: 1440, &quot;height&quot;: 1319}, {&quot;src&quot;: &quot;assets/art-platform-2.webp&quot;, &quot;label&quot;: &quot;Статья&quot;, &quot;width&quot;: 1440, &quot;height&quot;: 2486}, {&quot;src&quot;: &quot;assets/art-platform-3.webp&quot;, &quot;label&quot;: &quot;Личный кабинет&quot;, &quot;width&quot;: 1440, &quot;height&quot;: 1169}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Искусство ближе">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/art-platform-1.webp" width="1440" height="1319" alt="Искусство ближе — Темы" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 03</b><span>Темы</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/art-platform-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Макеты образовательного сайта об искусстве: темы, статья и личный кабинет.</p></section><section><h3>ЗАДАЧА</h3><p>Связать выбор материала, чтение и возвращение к начатым темам.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>На светлом фоне расположены репродукции и карточки с названиями. Боковая панель повторяется на всех экранах. В личном кабинете фон темнее, а рядом с материалами собраны достижения.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Три экрана показывают каталог тем, страницу статьи и профиль пользователя.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17710" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-future-play" aria-labelledby="title-future-play"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-future-play">Future Play</h2><p>Афиша и баннер выставки</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/future-play-slide-1.webp&quot;, &quot;label&quot;: &quot;Афиша&quot;, &quot;width&quot;: 531, &quot;height&quot;: 754}, {&quot;src&quot;: &quot;assets/future-play-slide-2.webp&quot;, &quot;label&quot;: &quot;Баннер&quot;, &quot;width&quot;: 1550, &quot;height&quot;: 772}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Future Play">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/future-play-slide-1.webp" width="531" height="754" alt="Future Play — Афиша" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 02</b><span>Афиша</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/future-play-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Афиша и баннер для концепции выставки VK Future Play о VR и видеоиграх.</p></section><section><h3>ЗАДАЧА</h3><p>Сделать два рекламных формата: вертикальный плакат с датой и адресом и горизонтальный баннер с названием события.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>В афише — лицо, разделённое на человеческую и цифровую половины. В баннере — хромированный геймпад. Их связывают пиксельный шрифт, чёрный фон и неоновые цвета.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>В вертикальной версии программа и дата собраны вокруг портрета. В горизонтальной название растянуто по ширине, а геймпад занимает правую часть.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17479" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-nature" aria-labelledby="title-nature"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-nature">Хрупкая природа</h2><p>Графика выставки бабочек и стрекоз</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/nature-slide-1.webp&quot;, &quot;label&quot;: &quot;Бабочка&quot;, &quot;width&quot;: 492, &quot;height&quot;: 621}, {&quot;src&quot;: &quot;assets/nature-slide-2.webp&quot;, &quot;label&quot;: &quot;Стрекоза&quot;, &quot;width&quot;: 463, &quot;height&quot;: 625}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Хрупкая природа">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/nature-slide-1.webp" width="492" height="621" alt="Хрупкая природа — Бабочка" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 02</b><span>Бабочка</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/nature-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Пара выставочных плакатов: о живых бабочках и стрекозах.</p></section><section><h3>ЗАДАЧА</h3><p>Собрать два плаката одной серии, сохранив различие между насекомыми.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Прозрачные крылья занимают почти весь лист. Тонкие линии, окружности и небольшие сферы повторяют их изгибы. Текст расположен по краям, чтобы не перекрывать изображение.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Одинаковые рамка, тёмный фон и расположение заголовка объединяют плакаты. У каждого — своё изображение и подпись.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17395" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-doruma" aria-labelledby="title-doruma"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-doruma">DORUMA</h2><p>Визуальный язык японского театра</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/doruma-slide-1.webp&quot;, &quot;label&quot;: &quot;Плакат с дарумами&quot;, &quot;width&quot;: 1292, &quot;height&quot;: 856}, {&quot;src&quot;: &quot;assets/doruma-slide-2.webp&quot;, &quot;label&quot;: &quot;Типографический плакат&quot;, &quot;width&quot;: 1292, &quot;height&quot;: 844}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта DORUMA">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/doruma-slide-1.webp" width="1292" height="856" alt="DORUMA — Плакат с дарумами" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 02</b><span>Плакат с дарумами</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/doruma-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Два плаката для японского театра DORUMA. Каждый показан отдельно и на мокапе.</p></section><section><h3>ЗАДАЧА</h3><p>Сделать два варианта афиши, используя образ дарумы и название театра.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>В первом плакате дарумы выстроены вертикально, а название набрано вдоль левого края. Во втором — объёмные красные знаки и повторяющееся DORUMA на белом фоне.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Первый вариант показан в вагоне, второй — на стене. Мокапы позволяют сравнить, как плакаты выглядят в окружении.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17405" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-recycle" aria-labelledby="title-recycle"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-recycle">Начни с сортировки</h2><p>Информационный буклет об экологии</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/recycle-slide-1.webp&quot;, &quot;label&quot;: &quot;Развёртка буклета&quot;, &quot;width&quot;: 1822, &quot;height&quot;: 639}, {&quot;src&quot;: &quot;assets/recycle-slide-2.webp&quot;, &quot;label&quot;: &quot;Буклет в сложенном виде&quot;, &quot;width&quot;: 2200, &quot;height&quot;: 907}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Начни с сортировки">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/recycle-slide-1.webp" width="1822" height="639" alt="Начни с сортировки — Развёртка буклета" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 02</b><span>Развёртка буклета</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/recycle-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Буклет о раздельном сборе отходов с правилами сортировки, QR-кодом и контактной информацией.</p></section><section><h3>ЗАДАЧА</h3><p>Распределить информацию по четырём полосам и сохранить порядок чтения после складывания.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Чёрные мешки с мусором и зелёные лягушки повторяются на разных полосах. Крупный узкий шрифт выделяет заголовки, небольшие колонки отведены под инструкции.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>В галерее — развёртка и объёмный макет буклета. На них видны обе стороны и расположение сгибов.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17417" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-forest-key" aria-labelledby="title-forest-key"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-forest-key">Лесной ключ</h2><p>Знак из четырёх ассоциаций</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/forest-key-slide-1.webp&quot;, &quot;label&quot;: &quot;Логотип и флаг&quot;, &quot;width&quot;: 1031, &quot;height&quot;: 725}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Лесной ключ">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/forest-key-slide-1.webp" width="1031" height="725" alt="Лесной ключ — Логотип и флаг" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 01</b><span>Логотип и флаг</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/forest-key-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Логотип «Лесного ключа» — проекта квестов и интерактивных историй.</p></section><section><h3>ЗАДАЧА</h3><p>Объединить в одном знаке ключ, лес и запутанный маршрут.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Круглый лабиринт окружает ключ. Внутри его силуэта видны дорога и замок. Зелёные оттенки дополнены золотистым акцентом.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Знак показан на тёмном фоне и на флаге. На ткани под ним добавлены название, подпись и силуэты деревьев.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17431" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-nomad" aria-labelledby="title-nomad"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-nomad">Кочевье</h2><p>Айдентика о путешествиях и культуре</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/nomad-slide-1.webp&quot;, &quot;label&quot;: &quot;Логотип и носители&quot;, &quot;width&quot;: 1061, &quot;height&quot;: 750}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Кочевье">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/nomad-slide-1.webp" width="1061" height="750" alt="Кочевье — Логотип и носители" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 01</b><span>Логотип и носители</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/nomad-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Логотип «Кочевья» — передвижной лаборатории культуры и ремёсел.</p></section><section><h3>ЗАДАЧА</h3><p>Соединить название с образом временного дома и показать знак на носителях.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Линии шатра переходят в буквы. Тёплый коричневый круг над названием напоминает солнце.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Логотип показан отдельно, на флаге и кружке. Светлая ткань и эмалированная посуда поддерживают тему выездной лаборатории.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17446" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-cyber-city" aria-labelledby="title-cyber-city"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-cyber-city">Ночной город</h2><p>3D-сцена в неоновом свете</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/cyber-city-slide-1.webp&quot;, &quot;label&quot;: &quot;На улице&quot;, &quot;width&quot;: 1410, &quot;height&quot;: 792}, {&quot;src&quot;: &quot;assets/cyber-city-slide-2.webp&quot;, &quot;label&quot;: &quot;Над городом&quot;, &quot;width&quot;: 1416, &quot;height&quot;: 792}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Ночной город">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/cyber-city-slide-1.webp" width="1410" height="792" alt="Ночной город — На улице" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 02</b><span>На улице</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/cyber-city-slide-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Два кадра 3D-города с персонажами и неоновыми вывесками.</p></section><section><h3>ЗАДАЧА</h3><p>Выбрать два разных ракурса: внутри улицы и над крышами.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Внизу внимание собирают вывески, провода и фигуры между зданиями. На верхнем ракурсе — персонаж на краю крыши и высотки с розовой подсветкой.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>Кадры показывают разные части окружения. Их связывают ночное освещение, розовый неон и плотная застройка.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-18402" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog><dialog class="case-modal" id="case-quiet-town" aria-labelledby="title-quiet-town"><article class="case-paper case-viewer">
+ <header class="viewer-heading"><div><h2 id="title-quiet-town">Город подождёт</h2><p>Игровая среда и стартовый экран</p></div><button class="modal-close" type="button" aria-label="Закрыть проект" autofocus>×</button></header>
+ <div class="project-gallery" data-slides="[{&quot;src&quot;: &quot;assets/quiet-town-1.webp&quot;, &quot;label&quot;: &quot;Игровой мир&quot;, &quot;width&quot;: 1600, &quot;height&quot;: 853}, {&quot;src&quot;: &quot;assets/quiet-town-2.webp&quot;, &quot;label&quot;: &quot;Стартовый экран&quot;, &quot;width&quot;: 1600, &quot;height&quot;: 853}]" data-index="0" role="region" aria-roledescription="карусель" aria-label="Работы проекта Город подождёт">
+  <figure class="gallery-frame"><img class="gallery-image" src="assets/quiet-town-1.webp" width="1600" height="853" alt="Город подождёт — Игровой мир" draggable="false" /></figure>
+  <div class="gallery-controls"><button type="button" data-gallery-step="-1" aria-label="Предыдущая работа">←</button><p class="gallery-position" aria-live="polite" aria-atomic="true"><b>01 / 02</b><span>Игровой мир</span></p><button type="button" data-gallery-step="1" aria-label="Следующая работа">→</button></div>
+  <a class="gallery-original" href="assets/quiet-town-1.webp" target="_blank" rel="noopener">Увеличить ↗</a>
+ </div>
+ <details class="case-description"><summary>О проекте <span aria-hidden="true">+</span></summary><div class="case-description-text"><section><h3>О ПРОЕКТЕ</h3><p>Игровое окружение и стартовый экран «Город подождёт».</p></section><section><h3>ЗАДАЧА</h3><p>Показать поселение целиком и подобрать для него оформление меню.</p></section><section><h3>КОНЦЕПЦИЯ</h3><p>Постройки, деревья и дорожки собраны вокруг общей площади. Меню оформлено как стол с записками и изображениями.</p></section><section><h3>ПРОЦЕСС И РЕЗУЛЬТАТ</h3><p>В галерее — вид игрового мира и стартовый экран.</p></section><a class="viewer-figma" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-17501" target="_blank" rel="noopener">Макет в Figma ↗</a></div></details>
+ </article></dialog>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal"><h2 class="display">ОТ ИДЕИ<br>ДО РЕЗУЛЬТАТА</h2><div class="section-index">05 / HOW I WORK</div></div>
+        <div class="process-grid">
+          <article class="process reveal" style="--r:-2deg"><b>01 — IDEA</b><div><h3>IDEA</h3><p>Изучаю задачу и формирую идею.</p></div></article>
+          <article class="process reveal" style="--r:2deg"><b>02 — CONCEPT</b><div><h3>CONCEPT</h3><p>Создаю визуальное направление и концепцию.</p></div></article>
+          <article class="process reveal" style="--r:-1deg"><b>03 — DESIGN</b><div><h3>DESIGN</h3><p>Разрабатываю дизайн и прорабатываю детали.</p></div></article>
+          <article class="process reveal" style="--r:3deg"><b>04 — RESULT</b><div><h3>RESULT</h3><p>Превращаю концепцию в готовый визуальный продукт.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="container"><div class="why-board reveal"><div class="why-grid"><div class="why-item"><strong>4+</strong><h3>ЛЕТ В ДИЗАЙНЕ</h3><p>Опыт, который помогает быстрее находить точное решение.</p></div><div class="why-item"><strong>+</strong><h3>DESIGN + CODE</h3><p>Творческий подход поддержан техническим пониманием.</p></div><div class="why-item"><strong>×</strong><h3>MULTI-DISCIPLINARY</h3><p>Графика / web / UI / 3D / game — в одном поле идей.</p></div><div class="why-item"><strong>01</strong><h3>DETAILS MATTER</h3><p>Внимание к деталям, логике и характеру проекта.</p></div></div></div></div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container">
+        <div class="cta-note reveal">A NEW IDEA IS ALWAYS WELCOME</div>
+        <h2 class="display reveal">ЕСТЬ ИДЕЯ?<br><span>ДАВАЙТЕ</span> ПРИДУМАЕМ,<br>КАК ЕЁ ПОКАЗАТЬ.</h2>
+        <p class="reveal">Расскажите о проекте — обсудим идею, задачу и возможное решение.</p>
+        <a class="sticker-button reveal" href="mailto:chikurova05@bk.ru">ОБСУДИТЬ ПРОЕКТ →</a>
+        <div class="contact-sheet reveal">
+          <div class="contact-name">Александра<br>Чикурова</div>
+          <a class="contact-link" href="https://t.me/sawuIya" target="_blank" rel="noopener"><span>TELEGRAM</span>@sawuIya ↗</a>
+          <a class="contact-link" href="https://vk.ru/s.chikgav" target="_blank" rel="noopener"><span>VK</span>s.chikgav ↗</a>
+          <a class="contact-link" href="mailto:chikurova05@bk.ru"><span>EMAIL</span>chikurova05@bk.ru ↗</a>
+          <a class="contact-link" href="https://www.figma.com/design/D6jDlNW2cXUw8rjBH4KyoQ/?node-id=289-16586" target="_blank" rel="noopener"><span>FIGMA</span>Все работы ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container footer-inner"><span>ALEXANDRA CHIKUROVA / DESIGNER</span><span>DESIGN / CODE / GAME</span><span>© 2026 ALEXANDRA CHIKUROVA</span></div></footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('active', open);
+      menuToggle.setAttribute('aria-expanded', open);
+      document.body.classList.toggle('menu-open', open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      navLinks.classList.remove('open'); menuToggle.classList.remove('active'); menuToggle.setAttribute('aria-expanded', 'false'); document.body.classList.remove('menu-open');
+    }));
+
+    const observer = new IntersectionObserver((entries) => entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const filters = document.querySelectorAll('.filter');
+    const projects = document.querySelectorAll('.project');
+    function filterWork(selected) {
+      filters.forEach(item => {
+        const active = item.dataset.filter === selected;
+        item.classList.toggle('active', active);
+        item.setAttribute('aria-pressed', String(active));
+      });
+      let count = 0;
+      projects.forEach(project => {
+        const show = selected === 'all' || project.dataset.category.split(' ').includes(selected);
+        project.classList.toggle('hide', !show);
+        if (show) { count++; project.classList.add('visible'); }
+      });
+      document.querySelector('.work-grid').classList.toggle('is-filtered', selected !== 'all');
+      document.querySelector('.empty-state').hidden = count > 0;
+      const label = selected === 'all' ? 'Все направления' : [...filters].find(f => f.dataset.filter === selected).childNodes[0].textContent.trim();
+      document.querySelector('.work-status').textContent = `${label} · показано ${count} из ${projects.length}`;
+    }
+    filters.forEach(filter => filter.addEventListener('click', () => filterWork(filter.dataset.filter)));
+    document.querySelectorAll('[data-service-filter]').forEach(link => link.addEventListener('click', () => filterWork(link.dataset.serviceFilter)));
+    let caseOpener = null;
+    function openCase(id, updateUrl = true) {
+      const modal = document.getElementById(`case-${id}`);
+      if (!modal || modal.tagName !== 'DIALOG') return;
+      document.querySelectorAll('.case-modal[open]').forEach(item => { item.close(); item.classList.remove('open'); });
+      caseOpener = document.activeElement;
+      modal.classList.add('open'); modal.showModal(); modal.scrollTop = 0;
+      document.body.classList.add('menu-open');
+      if (updateUrl) history.pushState(null, '', `#case-${id}`);
+    }
+    function closeCase(modal, updateUrl = true) {
+      modal.close(); modal.classList.remove('open');
+      document.body.classList.remove('menu-open');
+      if (updateUrl) history.replaceState(null, '', '#work');
+      if (caseOpener && caseOpener !== document.body) caseOpener.focus({preventScroll:true});
+    }
+    projects.forEach(project => project.addEventListener('click', event => { event.preventDefault(); openCase(project.dataset.case); }));
+    document.querySelectorAll('.case-modal').forEach(modal => {
+      modal.querySelector('.modal-close').addEventListener('click', () => closeCase(modal));
+      modal.addEventListener('click', event => { if (event.target === modal) closeCase(modal); });
+      modal.addEventListener('cancel', event => { event.preventDefault(); closeCase(modal); });
+    });
+    function syncCaseRoute() {
+      if (location.hash.startsWith('#case-')) openCase(location.hash.slice(6), false);
+      else document.querySelectorAll('.case-modal[open]').forEach(modal => closeCase(modal, false));
+    }
+    window.addEventListener('popstate', syncCaseRoute);
+    window.addEventListener('hashchange', syncCaseRoute);
+    syncCaseRoute();
+
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      document.querySelectorAll('[data-parallax]').forEach(el => { el.style.transform = `translateY(${y * Number(el.dataset.parallax)}px) ${el.classList.contains('experience-note') ? 'rotate(8deg)' : el.classList.contains('hero-arrow') ? 'rotate(-19deg)' : ''}`; });
+    }, { passive: true });
+
+    // =====================================================
+    // INTERACTIVE STICKER — CLEAN VERSION
+    // Desktop: drag. Mobile/tablet: tap.
+    // =====================================================
+    const stickerInteraction = document.getElementById('stickerInteraction');
+    const pullSticker = document.getElementById('pullSticker');
+    const secretNote = document.getElementById('secretNote');
+    const noteClose = document.getElementById('noteClose');
+
+    let stickerOpen = false;
+    let dragStart = null;
+
+    function setStickerOffset(x = 0, y = 0) {
+      pullSticker.style.setProperty('--drag-x', `${x}px`);
+      pullSticker.style.setProperty('--drag-y', `${y}px`);
+    }
+
+    function openStickerNote() {
+      if (stickerOpen) return;
+      stickerOpen = true;
+      dragStart = null;
+      pullSticker.classList.remove('dragging');
+      pullSticker.classList.add('opened');
+      stickerInteraction.classList.remove('is-dragging');
+      stickerInteraction.classList.add('is-opened');
+
+      window.setTimeout(() => {
+        secretNote.classList.add('visible');
+        secretNote.setAttribute('aria-hidden', 'false');
+      }, 180);
+    }
+
+    function closeStickerNote() {
+      secretNote.classList.remove('visible');
+      secretNote.setAttribute('aria-hidden', 'true');
+      stickerInteraction.classList.remove('is-opened');
+      setStickerOffset();
+
+      window.setTimeout(() => {
+        stickerOpen = false;
+        pullSticker.classList.remove('opened');
+      }, 260);
+    }
+
+    function isDesktopPointer() {
+      return window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    }
+
+    pullSticker.addEventListener('pointerdown', (event) => {
+      if (stickerOpen) return;
+
+      if (!isDesktopPointer()) {
+        openStickerNote();
+        return;
+      }
+
+      dragStart = { x: event.clientX, y: event.clientY };
+      pullSticker.setPointerCapture(event.pointerId);
+      pullSticker.classList.add('dragging');
+      stickerInteraction.classList.add('is-dragging');
+      event.preventDefault();
+    });
+
+    pullSticker.addEventListener('pointermove', (event) => {
+      if (!dragStart || stickerOpen) return;
+      const x = event.clientX - dragStart.x;
+      const y = event.clientY - dragStart.y;
+      setStickerOffset(x, y);
+
+      if (Math.hypot(x, y) >= 100) openStickerNote();
+    });
+
+    function endStickerDrag(event) {
+      if (!dragStart || stickerOpen) return;
+      pullSticker.releasePointerCapture?.(event.pointerId);
+      pullSticker.classList.remove('dragging');
+      stickerInteraction.classList.remove('is-dragging');
+      setStickerOffset();
+      dragStart = null;
+    }
+
+    pullSticker.addEventListener('pointerup', endStickerDrag);
+    pullSticker.addEventListener('pointercancel', endStickerDrag);
+    noteClose.addEventListener('click', closeStickerNote);
+  </script>
+  <script src="gallery.js"></script>
+</body>
+</html>
